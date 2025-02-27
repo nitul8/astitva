@@ -15,7 +15,7 @@ const FoodDonation = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Food Donation Registration:", formData);
-        setLoading(true); // Show loading state
+        setLoading(true);
 
         try {
             const response = await fetch(
