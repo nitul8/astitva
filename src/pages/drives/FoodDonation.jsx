@@ -31,7 +31,7 @@ const FoodDonation = () => {
             const result = await response.json();
 
             if (response.ok) {
-                alert(result.message);
+                alert("Submitted");
                 setFormData({
                     name: "",
                     email: "",

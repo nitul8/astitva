@@ -1,5 +1,6 @@
 import shyamolima from "../../assets/nonjec/shyamolima.png";
 import amisha from "../../assets/nonjec/amisha.png";
+import jayshree from "../../assets/nonjec/jayshree.jpeg";
 
 const nonjec = [
     {
@@ -14,5 +15,12 @@ const nonjec = [
         name: "Amisha Chutia",
         role: "Member",
     },
+    {
+        id: 3,
+        imgSrc: jayshree,
+        name: "Jayshree Doloi",
+        role: "Member",
+    },
 ];
+
 export default nonjec;

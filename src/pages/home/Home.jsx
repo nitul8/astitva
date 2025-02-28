@@ -11,6 +11,8 @@ import nhm from "../../assets/partners/nhm.png";
 import tps from "../../assets/partners/tps.jpeg";
 import nawf from "../../assets/partners/nawf.jpg";
 import jec from "../../assets/partners/jec.jpg";
+import showeringhope from "../../assets/partners/showeringhope.jpeg";
+
 import Footer from "./Footer";
 
 // Array of partner logos
@@ -20,6 +22,7 @@ const partners = [
     {name: "The Period Society, Assam", logo: tps},
     {name: "Nu Animal Welfare Foundation", logo: nawf},
     {name: "Jorhat Engineering College", logo: jec},
+    {name: "Showering Hope", logo: showeringhope},
 ];
 
 const Home = () => {
