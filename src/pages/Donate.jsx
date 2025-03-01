@@ -1,8 +1,9 @@
 import {useState, useEffect} from "react";
 import {QRCodeCanvas} from "qrcode.react";
+import logo from "../assets/logo.jpeg";
 
 function Donate() {
-    const upiId = "9864162861@naviaxis"; // Your UPI ID
+    const upiId = "6001393597@naviaxis"; // Your UPI ID
     const [amount, setAmount] = useState("");
     const [gpayUrl, setGpayUrl] = useState("");
     const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -19,7 +20,7 @@ function Donate() {
     useEffect(() => {
         if (amount && amount > 0) {
             const encodedUpiId = encodeURIComponent(upiId);
-            const encodedName = encodeURIComponent("Nitul Das");
+            const encodedName = encodeURIComponent("Astitva Foundation");
             const encodedAmount = encodeURIComponent(amount);
             const url = `upi://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation`;
             setGpayUrl(url);
@@ -34,6 +35,13 @@ function Donate() {
             return;
         }
         window.open(gpayUrl, "_blank"); // Open Google Pay in a new tab
+    };
+
+    const copyToClipboard = () => {
+        navigator.clipboard
+            .writeText(upiId)
+            .then(() => alert("UPI ID copied to clipboard!"))
+            .catch((err) => console.error("Failed to copy UPI ID", err));
     };
 
     return (
@@ -73,7 +81,7 @@ function Donate() {
                                 size={200}
                                 includeMargin={true}
                                 imageSettings={{
-                                    src: "../../assets/logo.jpeg", // Replace with actual logo path
+                                    src: logo, // Replace with actual logo path
                                     x: undefined,
                                     y: undefined,
                                     height: 40,
@@ -84,6 +92,18 @@ function Donate() {
                             <p className="text-sm mt-2">Scan to Pay</p>
                         </div>
                     ) : null}
+                </div>
+                <div className="text-center mt-6">
+                    Facing issue with payment{" "}
+                    <p className="text-sm mt-2">
+                        Click on this UPI ID to copy and pay manually:{" "}
+                        <span
+                            className="font-bold cursor-pointer text-blue-600"
+                            onClick={copyToClipboard}
+                        >
+                            {upiId}
+                        </span>
+                    </p>
                 </div>
             </div>
 

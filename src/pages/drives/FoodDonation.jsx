@@ -31,7 +31,6 @@ const FoodDonation = () => {
             const result = await response.json();
 
             if (response.ok) {
-                alert("Submitted");
                 setFormData({
                     name: "",
                     email: "",
@@ -39,6 +38,13 @@ const FoodDonation = () => {
                     college: "",
                     semester: "",
                 }); // Clear form
+                if (
+                    window.confirm(
+                        "Registration successful! Would you like to donate now?"
+                    )
+                ) {
+                    window.location.href = "/donate"; // Redirect to donate page
+                }
             } else {
                 alert(result.error || "Error registering. Try again.");
             }
