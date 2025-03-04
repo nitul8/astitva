@@ -13,6 +13,7 @@ import nawf from "../../assets/partners/nawf.jpg";
 import jec from "../../assets/partners/jec.jpg";
 import showeringhope from "../../assets/partners/showeringhope.jpeg";
 import bhorokha from "../../assets/partners/bhorokha.jpeg";
+import asha from "../../assets/partners/asha.jpeg";
 
 import Footer from "./Footer";
 
@@ -25,6 +26,7 @@ const partners = [
     {name: "Jorhat Engineering College", logo: jec},
     {name: "Showering Hope", logo: showeringhope},
     {name: "Bhorokha", logo: bhorokha},
+    {name: "Asha", logo: asha},
 ];
 
 const Home = () => {
