@@ -7,7 +7,7 @@ import Whisper from "../styles/Whisper";
 import Dancing from "../styles/Dancing";
 
 function Donate() {
-    const upiId = "6001393597@naviaxis"; // Your UPI ID
+    const upiId = "9864162861@naviaxis"; // Your UPI ID
     const [amount, setAmount] = useState("");
     const [gpayUrl, setGpayUrl] = useState("");
     const [selectedAmount, setSelectedAmount] = useState(""); // Keep as string
