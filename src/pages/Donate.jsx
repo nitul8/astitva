@@ -7,7 +7,7 @@ import Whisper from "../styles/Whisper";
 import Dancing from "../styles/Dancing";
 
 function Donate() {
-    const upiId = "9864162861@naviaxis"; // Your UPI ID
+    const upiId = "6001393597@naviaxis"; // Your UPI ID
     const [amount, setAmount] = useState("");
     const [gpayUrl, setGpayUrl] = useState("");
     const [selectedAmount, setSelectedAmount] = useState(""); // Keep as string
@@ -50,9 +50,8 @@ function Donate() {
         }
 
         if (isLargeScreen) {
-            setIsModalOpen(true); // Show QR code modal on large screens
+            setIsModalOpen(true);
         } else {
-            // iOS Safari fix - Use <a> tag instead of window.open()
             const upiLink = document.createElement("a");
             upiLink.href = gpayUrl;
             upiLink.target = "_blank";
