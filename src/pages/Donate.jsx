@@ -29,8 +29,16 @@ function Donate() {
             const encodedUpiId = encodeURIComponent(upiId);
             const encodedName = encodeURIComponent("Astitva Foundation");
             const encodedAmount = encodeURIComponent(amount);
-            const url = `upi://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation`;
-            setGpayUrl(url);
+
+            // Standard UPI payment URL
+            const upiUrl = `upi://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation`;
+
+            // Google Pay specific deep link
+            const gpayDeepLink = `https://tez.google.com/pay?upi_uri=${encodeURIComponent(
+                upiUrl
+            )}`;
+
+            setGpayUrl(gpayDeepLink);
         } else {
             setGpayUrl("");
         }
@@ -53,7 +61,7 @@ function Donate() {
             setIsModalOpen(true);
         } else {
             const upiLink = document.createElement("a");
-            upiLink.href = gpayUrl;
+            upiLink.href = gpayUrl; // Opens Google Pay
             upiLink.target = "_blank";
             upiLink.rel = "noopener noreferrer";
             document.body.appendChild(upiLink);
