@@ -48,10 +48,18 @@ function Donate() {
             alert("Please enter a valid amount.");
             return;
         }
+
         if (isLargeScreen) {
-            setIsModalOpen(true);
+            setIsModalOpen(true); // Show QR code modal on large screens
         } else {
-            window.open(gpayUrl, "_blank");
+            // iOS Safari fix - Use <a> tag instead of window.open()
+            const upiLink = document.createElement("a");
+            upiLink.href = gpayUrl;
+            upiLink.target = "_blank";
+            upiLink.rel = "noopener noreferrer";
+            document.body.appendChild(upiLink);
+            upiLink.click();
+            document.body.removeChild(upiLink);
         }
     };
 
