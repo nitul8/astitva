@@ -29,13 +29,8 @@ function Donate() {
             const encodedUpiId = encodeURIComponent(upiId);
             const encodedName = encodeURIComponent("Astitva Foundation");
             const encodedAmount = encodeURIComponent(amount);
-
-            const upiUrl = `upi://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation`;
-            const gpayIntentUrl = `https://pay.google.com/gp/v/ui/pay?url=${encodeURIComponent(
-                upiUrl
-            )}`;
-
-            setGpayUrl(gpayIntentUrl);
+            const url = `upi://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation`;
+            setGpayUrl(url);
         } else {
             setGpayUrl("");
         }
