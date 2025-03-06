@@ -29,16 +29,8 @@ function Donate() {
             const encodedUpiId = encodeURIComponent(upiId);
             const encodedName = encodeURIComponent("Astitva Foundation");
             const encodedAmount = encodeURIComponent(amount);
-
-            // Standard UPI payment URL
-            const upiUrl = `upi://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation`;
-
-            // Google Pay specific deep link
-            const gpayDeepLink = `https://tez.google.com/pay?upi_uri=${encodeURIComponent(
-                upiUrl
-            )}`;
-
-            setGpayUrl(gpayDeepLink);
+            const url = `upi://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation`;
+            setGpayUrl(url);
         } else {
             setGpayUrl("");
         }
@@ -57,20 +49,17 @@ function Donate() {
             return;
         }
 
-        const encodedUpiId = encodeURIComponent(upiId);
-        const encodedName = encodeURIComponent("Astitva Foundation");
-        const encodedAmount = encodeURIComponent(amount);
-
-        // Construct the UPI payment URL
-        const upiUrl = `upi://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation`;
-
-        // Use Google Pay intent to directly navigate to the payment page
-        const gpayIntent = `intent://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation&url=${encodeURIComponent(
-            upiUrl
-        )}#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end;`;
-
-        // Open the Google Pay app directly to the payment page
-        window.location.href = gpayIntent;
+        if (isLargeScreen) {
+            setIsModalOpen(true);
+        } else {
+            const upiLink = document.createElement("a");
+            upiLink.href = gpayUrl;
+            upiLink.target = "_blank";
+            upiLink.rel = "noopener noreferrer";
+            document.body.appendChild(upiLink);
+            upiLink.click();
+            document.body.removeChild(upiLink);
+        }
     };
 
     return (
