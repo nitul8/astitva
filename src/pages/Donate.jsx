@@ -57,17 +57,20 @@ function Donate() {
             return;
         }
 
-        if (isLargeScreen) {
-            setIsModalOpen(true);
-        } else {
-            const upiLink = document.createElement("a");
-            upiLink.href = gpayUrl; // Opens Google Pay
-            upiLink.target = "_blank";
-            upiLink.rel = "noopener noreferrer";
-            document.body.appendChild(upiLink);
-            upiLink.click();
-            document.body.removeChild(upiLink);
-        }
+        const encodedUpiId = encodeURIComponent(upiId);
+        const encodedName = encodeURIComponent("Astitva Foundation");
+        const encodedAmount = encodeURIComponent(amount);
+
+        // Construct the UPI payment URL
+        const upiUrl = `upi://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation`;
+
+        // Use Google Pay intent to directly navigate to the payment page
+        const gpayIntent = `intent://pay?pa=${encodedUpiId}&pn=${encodedName}&am=${encodedAmount}&cu=INR&tn=Donation&url=${encodeURIComponent(
+            upiUrl
+        )}#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end;`;
+
+        // Open the Google Pay app directly to the payment page
+        window.location.href = gpayIntent;
     };
 
     return (
