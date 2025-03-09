@@ -57,7 +57,7 @@ const Impact = () => {
 
             {/* Second Section */}
             <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center m-16"
+                className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center my-16"
                 initial="hidden"
                 whileInView="visible"
                 transition={{staggerChildren: 0.4}}
