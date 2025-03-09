@@ -45,12 +45,27 @@ const Home = () => {
                 <h1 className="text-5xl md:text-7xl font-bold drop-shadow-lg">
                     Astitva Foundation
                 </h1>
-                <p className="text-lg md:text-2xl mt-4 drop-shadow-lg">
+                <p className="text-lg md:text-2xl mt-4 mb-8 drop-shadow-lg">
                     One step towards humanity.
                 </p>
                 <Link
                     to="/donate"
-                    className="mt-8 bg-primary text-white py-3 px-8 rounded-lg hover:bg-blue-700 transition duration-300"
+                    className="relative inline-block px-10 py-3 text-white text-lg font-medium rounded-lg transition-all duration-300"
+                    style={{
+                        background:
+                            "linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%) padding-box, linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box",
+                        borderRadius: "7px",
+                        border: "2px solid transparent",
+                        textShadow: "1px 1px 1px #00000040",
+                        boxShadow: "8px 8px 20px 0px #45090059",
+                    }}
+                    onMouseEnter={(e) =>
+                        (e.currentTarget.style.boxShadow = "none")
+                    }
+                    onMouseLeave={(e) =>
+                        (e.currentTarget.style.boxShadow =
+                            "8px 8px 20px 0px #45090059")
+                    }
                 >
                     Donate Now
                 </Link>

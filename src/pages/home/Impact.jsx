@@ -2,6 +2,7 @@ import React from "react";
 import {motion} from "framer-motion";
 import clothesdonation from "../../assets/drive/clothesdonation.png";
 import pawlentine from "../../assets/drive/pawlentine.png";
+import fooddistribution from "../../assets/drive/fooddistribution.jpeg";
 
 const imageVariants = {
     hidden: {opacity: 0, x: -100},
@@ -56,7 +57,7 @@ const Impact = () => {
 
             {/* Second Section */}
             <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center mt-16"
+                className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center m-16"
                 initial="hidden"
                 whileInView="visible"
                 transition={{staggerChildren: 0.4}}
@@ -94,6 +95,48 @@ const Impact = () => {
                     variants={imageVariants}
                     className="w-80 md:w-96 rounded-lg shadow-lg"
                 />
+            </motion.div>
+
+            {/* Third Section */}
+            <motion.div
+                className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center"
+                initial="hidden"
+                whileInView="visible"
+                transition={{staggerChildren: 0.4}}
+                viewport={{once: true}}
+            >
+                <motion.img
+                    src={fooddistribution}
+                    alt="Food Distribution"
+                    variants={imageVariants}
+                    className="w-80 md:w-96 rounded-lg shadow-lg"
+                />
+                <motion.div variants={textVariants} className="text-md">
+                    <h2 className="text-red-600 font-extrabold text-2xl md:text-3xl">
+                        Food Distribution Drive
+                    </h2>
+                    <p className="text-gray-800 mt-4">
+                        With the collective efforts of generous individuals from
+                        our community, we successfully organized a food
+                        distribution drive on 9th March,2025, ensuring that no
+                        one sleeps with an empty stomach.
+                    </p>
+                    <p className="text-gray-800 mt-4">
+                        Distributed over 100 food packets to underprivileged
+                        individuals, including children and families struggling
+                        with food insecurity.
+                    </p>
+                    <p className="text-gray-800 mt-4">
+                        Additionally, we provided approximately 120 bottles of
+                        water (0.75L each) to help ensure access to clean
+                        drinking water.
+                    </p>
+                    <p className="text-gray-800 mt-4">
+                        This initiative was a small step towards making a
+                        difference, and we are grateful to everyone who
+                        contributed and supported the cause.
+                    </p>
+                </motion.div>
             </motion.div>
         </div>
     );

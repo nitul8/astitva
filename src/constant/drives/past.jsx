@@ -55,6 +55,32 @@ const pastDrives = [
         ),
         impact: "We have successfully administered 50+ anti-rabies vaccinations, treated 10+ dogs for skin infections, and provided other necessary treatments to several strays. Additionally, we have reached almost 100 dogs through our feeding initiative.",
     },
+    {
+        id: 3,
+        title: "Food Distribution Drive",
+        date: "March 9, 2025",
+        location: "Jorhat Town, Jorhat, Assam",
+        description: (
+            <div>
+                <p>
+                    Our Food Distribution Drive was an initiative aimed at
+                    supporting underprivileged individuals and families facing
+                    food insecurity. On March 9, 2025, we organized a meal
+                    distribution event in Jorhat, ensuring that nutritious food
+                    reached those in need.
+                </p>
+                <p>
+                    With the generous support of our community, we distributed
+                    freshly prepared food packets and clean drinking water to
+                    underprivileged children, daily wage workers, and homeless
+                    individuals. This drive was a step toward alleviating hunger
+                    and making a positive impact in our society.
+                </p>
+            </div>
+        ),
+        impact: "We successfully distributed 100+ food packets and approximately 120 bottles (0.75L each) of clean drinking water, providing essential nourishment to those in need.",
+        link: "https://drive.google.com/drive/u/3/folders/130mGgwGgsqJ989zjcfyGgZPt2LQ-FQu6",
+    },
 ];
 
 export default pastDrives;
