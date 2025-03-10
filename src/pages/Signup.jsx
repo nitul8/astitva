@@ -1,6 +1,5 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
-
 import {FaApple} from "react-icons/fa";
 import {FcGoogle} from "react-icons/fc";
 
@@ -14,7 +13,6 @@ function Signup() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle signup logic here
         console.log("Signup:", formData);
     };
 
@@ -26,12 +24,15 @@ function Signup() {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-100 mt-8">
-            <div className="w-96 bg-white p-6 rounded-lg shadow-lg">
-                <p className="text-center text-2xl font-bold mb-6">
-                    Create your account
+        <div className="flex justify-center items-center h-screen bg-gray-100 px-4 mt-8">
+            <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg border-4 border-white">
+                <p className="text-center text-2xl font-extrabold">
+                    Create Your Account
                 </p>
-                <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                <form
+                    className="flex flex-col mt-6 gap-4"
+                    onSubmit={handleSubmit}
+                >
                     <input
                         id="name"
                         name="name"
@@ -39,7 +40,7 @@ function Signup() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="w-full p-4 bg-white border-none rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Full Name"
                     />
                     <input
@@ -50,7 +51,7 @@ function Signup() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="w-full p-4 bg-white border-none rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Email"
                     />
                     <input
@@ -61,28 +62,27 @@ function Signup() {
                         required
                         value={formData.password}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="w-full p-4 bg-white border-none rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Create Password"
                     />
                     <input
-                        id="password"
-                        name="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
                         type="password"
-                        autoComplete="current-password"
                         required
-                        value={formData.password}
+                        value={formData.confirmPassword}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="w-full p-4 bg-white border-none rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Confirm Password"
                     />
                     <button
                         type="submit"
-                        className="w-full bg-orange-600 text-white px-3 py-2 rounded-full shadow-md hover:bg-red-500 transition"
+                        className="w-full bg-gradient-to-br from-red-500 via-orange-400 to-yellow-500 text-white py-3 rounded-xl shadow-lg font-bold hover:scale-105 transition"
                     >
                         Create Your Account
                     </button>
                 </form>
-                <p className="text-center text-sm text-gray-500 mt-4">
+                <p className="text-center text-sm text-gray-500 mt-6">
                     Already have an account?{" "}
                     <Link
                         to="/login"
@@ -91,22 +91,20 @@ function Signup() {
                         Log in
                     </Link>
                 </p>
-                <div className="mt-6 flex flex-col gap-3">
-                    <button className="flex items-center justify-center w-full px-3 py-2 border border-black rounded-full shadow-md font-medium bg-black text-white hover:scale-105 transition">
-                        <span className="mr-2 text-xl">
-                            <FaApple />
-                        </span>{" "}
-                        Sign up with Apple
+                <div className="mt-6 text-center text-gray-500 text-sm">
+                    Or Sign up with
+                </div>
+                <div className="flex justify-center gap-4 mt-4">
+                    <button className="p-3 bg-black text-white rounded-full shadow-md border-4 border-white hover:scale-110 transition">
+                        <FaApple className="text-xl" />
                     </button>
-                    <button className="flex items-center justify-center w-full px-3 py-2 border border-gray-400 rounded-full shadow-md text-gray-600 font-medium hover:scale-105 transition">
-                        <span className="mr-2">
-                            <FcGoogle />
-                        </span>{" "}
-                        Sign up with Google
+                    <button className="p-3 bg-gray-100 text-gray-600 rounded-full shadow-md border-4 border-white hover:scale-110 transition">
+                        <FcGoogle className="text-xl" />
                     </button>
                 </div>
             </div>
         </div>
     );
 }
+
 export default Signup;
