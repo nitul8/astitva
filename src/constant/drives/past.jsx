@@ -1,32 +1,29 @@
 const pastDrives = [
     {
-        id: 1,
-        title: "Clothes Donation Drive",
-        date: "January 23, 2025",
-        location: "Baruah Chariali, Jorhat, Assam",
+        id: 3,
+        title: "Food Distribution Drive",
+        date: "March 9, 2025",
+        location: "Jorhat Town, Jorhat, Assam",
         description: (
             <div>
                 <p>
-                    Generous individuals from our community came forward to
-                    donate clothes, extending a helping hand to those in need.
-                    Our team organized a collection drive on 22nd January 2025,
-                    where we gathered a significant number of warm clothes,
-                    ensuring they reached people who required them the most
-                    during the cold season.
+                    Our Food Distribution Drive was an initiative aimed at
+                    supporting underprivileged individuals and families facing
+                    food insecurity. On March 9, 2025, we organized a meal
+                    distribution event in Jorhat, ensuring that nutritious food
+                    reached those in need.
                 </p>
                 <p>
-                    On 23rd January 2025, we successfully distributed the
-                    collected clothes to underprivileged individuals, including
-                    homeless people and families facing hardships. Seeing the
-                    smiles on their faces and the gratitude in their eyes was
-                    truly heartwarming. This initiative not only provided warmth
-                    but also reinforced the spirit of compassion and community
-                    support.
+                    With the generous support of our community, we distributed
+                    freshly prepared food packets and clean drinking water to
+                    underprivileged children, daily wage workers, and homeless
+                    individuals. This drive was a step toward alleviating hunger
+                    and making a positive impact in our society.
                 </p>
             </div>
         ),
-        impact: "Distributed over 2000 pieces of clothing including winter-wear and summar-wear to underprivileged communities. Additionally we distributed 10+ blankets to homeless individuals and families in need.",
-        link: "https://drive.google.com/drive/folders/1vIKJKiEmnNjtWZO31sk-AnNY4LDgNSk3",
+        impact: "We successfully distributed 100+ food packets and approximately 120 bottles (0.75L each) of clean drinking water, providing essential nourishment to those in need.",
+        link: "https://drive.google.com/drive/folders/130mGgwGgsqJ989zjcfyGgZPt2LQ-FQu6?usp=sharing",
     },
     {
         id: 2,
@@ -56,30 +53,33 @@ const pastDrives = [
         impact: "We have successfully administered 50+ anti-rabies vaccinations, treated 10+ dogs for skin infections, and provided other necessary treatments to several strays. Additionally, we have reached almost 100 dogs through our feeding initiative.",
     },
     {
-        id: 3,
-        title: "Food Distribution Drive",
-        date: "March 9, 2025",
-        location: "Jorhat Town, Jorhat, Assam",
+        id: 1,
+        title: "Clothes Donation Drive",
+        date: "January 23, 2025",
+        location: "Baruah Chariali, Jorhat, Assam",
         description: (
             <div>
                 <p>
-                    Our Food Distribution Drive was an initiative aimed at
-                    supporting underprivileged individuals and families facing
-                    food insecurity. On March 9, 2025, we organized a meal
-                    distribution event in Jorhat, ensuring that nutritious food
-                    reached those in need.
+                    Generous individuals from our community came forward to
+                    donate clothes, extending a helping hand to those in need.
+                    Our team organized a collection drive on 22nd January 2025,
+                    where we gathered a significant number of warm clothes,
+                    ensuring they reached people who required them the most
+                    during the cold season.
                 </p>
                 <p>
-                    With the generous support of our community, we distributed
-                    freshly prepared food packets and clean drinking water to
-                    underprivileged children, daily wage workers, and homeless
-                    individuals. This drive was a step toward alleviating hunger
-                    and making a positive impact in our society.
+                    On 23rd January 2025, we successfully distributed the
+                    collected clothes to underprivileged individuals, including
+                    homeless people and families facing hardships. Seeing the
+                    smiles on their faces and the gratitude in their eyes was
+                    truly heartwarming. This initiative not only provided warmth
+                    but also reinforced the spirit of compassion and community
+                    support.
                 </p>
             </div>
         ),
-        impact: "We successfully distributed 100+ food packets and approximately 120 bottles (0.75L each) of clean drinking water, providing essential nourishment to those in need.",
-        link: "https://drive.google.com/drive/u/3/folders/130mGgwGgsqJ989zjcfyGgZPt2LQ-FQu6",
+        impact: "Distributed over 2000 pieces of clothing including winter-wear and summar-wear to underprivileged communities. Additionally we distributed 10+ blankets to homeless individuals and families in need.",
+        link: "https://drive.google.com/drive/folders/1vIKJKiEmnNjtWZO31sk-AnNY4LDgNSk3",
     },
 ];
 

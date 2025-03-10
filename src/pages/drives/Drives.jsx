@@ -68,9 +68,36 @@ function Drives() {
                                 key={drive.id}
                                 className="bg-white rounded-lg shadow-md p-6"
                             >
-                                <h4 className="text-xl font-semibold text-red-600 mb-2">
-                                    {drive.title}
-                                </h4>
+                                <div className="flex justify-between items-center">
+                                    <h4 className="text-xl font-semibold text-red-600 mb-2">
+                                        {drive.title}
+                                    </h4>
+                                    <button
+                                        className="relative inline-block px-2 py-1 text-white text-md font-medium rounded-lg transition-all duration-300"
+                                        style={{
+                                            background:
+                                                "linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%) padding-box, linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box",
+                                            borderRadius: "7px",
+                                            border: "2px solid transparent",
+                                            textShadow: "1px 1px 1px #00000040",
+                                            boxShadow:
+                                                "8px 8px 20px 0px #45090059",
+                                        }}
+                                        onMouseEnter={(e) =>
+                                            (e.currentTarget.style.boxShadow =
+                                                "none")
+                                        }
+                                        onMouseLeave={(e) =>
+                                            (e.currentTarget.style.boxShadow =
+                                                "8px 8px 20px 0px #45090059")
+                                        }
+                                        onClick={() =>
+                                            window.open(drive.link, "_blank")
+                                        }
+                                    >
+                                        Glimpse
+                                    </button>
+                                </div>
                                 <div className="text-gray-600 mb-4">
                                     <p className="mb-1">
                                         <span className="font-medium">
@@ -91,30 +118,6 @@ function Drives() {
                                 <p className="text-green-600 font-medium">
                                     {drive.impact}
                                 </p>
-                                <button
-                                    className="relative mt-5 inline-block px-2 py-1 text-white text-md font-medium rounded-lg transition-all duration-300"
-                                    style={{
-                                        background:
-                                            "linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%) padding-box, linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box",
-                                        borderRadius: "7px",
-                                        border: "2px solid transparent",
-                                        textShadow: "1px 1px 1px #00000040",
-                                        boxShadow: "8px 8px 20px 0px #45090059",
-                                    }}
-                                    onMouseEnter={(e) =>
-                                        (e.currentTarget.style.boxShadow =
-                                            "none")
-                                    }
-                                    onMouseLeave={(e) =>
-                                        (e.currentTarget.style.boxShadow =
-                                            "8px 8px 20px 0px #45090059")
-                                    }
-                                    onClick={() =>
-                                        window.open(drive.link, "_blank")
-                                    }
-                                >
-                                    Glimpse of the Drive
-                                </button>
                             </div>
                         ))}
                     </div>

@@ -4,8 +4,10 @@ import arnab from "../assets/lead/arnab.png";
 import tanaya from "../assets/lead/tanaya.jpeg";
 import kristi from "../assets/lead/kristi.jpeg";
 import sakil from "../assets/lead/sakil.png";
+import thengal from "../assets/lead/thengal.png";
 import jyotishman from "../assets/lead/jyotishman.png";
 import abiram from "../assets/lead/abiram.png";
+import dhriti from "../assets/lead/dhriti.jpeg";
 import hiya from "../assets/lead/hiya.jpeg";
 
 import jec from "../constant/members/jec";
@@ -126,18 +128,28 @@ function About() {
                             role="Executing Lead"
                         />
                         <TeamMember
-                            imgSrc={jyotishman}
-                            name="Jyotishman Das"
-                            role="Management Lead"
+                            imgSrc={thengal}
+                            name="Angaraj Thengal"
+                            role="Executing Lead"
                         />
                     </div>
 
                     {/* Management Team*/}
-                    <div className="grid grid-cols-2 md:grid-cols-2 gap-2 md:gap-8 mb-12">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-8 mb-12">
+                        <TeamMember
+                            imgSrc={jyotishman}
+                            name="Jyotishman Das"
+                            role="Management Lead"
+                        />
                         <TeamMember
                             imgSrc={abiram}
                             name="Abiram Yein"
                             role="Management Lead"
+                        />
+                        <TeamMember
+                            imgSrc={dhriti}
+                            name="Dhritisma Saloi"
+                            role="Content Lead"
                         />
                         <TeamMember
                             imgSrc={hiya}
