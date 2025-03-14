@@ -11,6 +11,7 @@ const Login = React.lazy(() => import("./pages/Login"));
 const Signup = React.lazy(() => import("./pages/Signup"));
 const Donate = React.lazy(() => import("./pages/Donate"));
 const FoodDonation = React.lazy(() => import("./pages/drives/FoodDonation"));
+const BloodDonation = React.lazy(() => import("./pages/drives/BloodDonation"));
 
 function App() {
     return (
@@ -76,6 +77,14 @@ function App() {
                             element={
                                 <Suspense fallback={<p>Loading...</p>}>
                                     <FoodDonation />
+                                </Suspense>
+                            }
+                        />
+                        <Route
+                            path="/blood-donation"
+                            element={
+                                <Suspense fallback={<p>Loading...</p>}>
+                                    <BloodDonation />
                                 </Suspense>
                             }
                         />

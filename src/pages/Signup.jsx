@@ -11,9 +11,47 @@ function Signup() {
         confirmPassword: "",
     });
 
-    const handleSubmit = (e) => {
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Signup:", formData);
+        setError("");
+        setSuccess("");
+
+        if (formData.password !== formData.confirmPassword) {
+            setError("Passwords do not match!");
+            return;
+        }
+
+        try {
+            const response = await fetch("http://localhost:3000/api/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    password: formData.password,
+                }),
+            });
+
+            const data = await response.json();
+            if (!response.ok) {
+                throw new Error(data.message || "Signup failed");
+            }
+
+            setSuccess("Account created successfully!");
+            setFormData({
+                name: "",
+                email: "",
+                password: "",
+                confirmPassword: "",
+            });
+        } catch (error) {
+            setError(error.message);
+        }
     };
 
     const handleChange = (e) => {
@@ -24,7 +62,7 @@ function Signup() {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-100 px-4 mt-8">
+        <div className="flex justify-center items-center h-screen bg-gray-100 px-4 md:mt-8">
             <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg border-4 border-white">
                 <p className="text-center text-2xl font-extrabold">
                     Create Your Account
@@ -40,7 +78,7 @@ function Signup() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full p-4 bg-white border-none rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-4 bg-white border-none rounded-xl shadow-orange-100 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Full Name"
                     />
                     <input
@@ -51,7 +89,7 @@ function Signup() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full p-4 bg-white border-none rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-4 bg-white border-none rounded-xl shadow-orange-100 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Email"
                     />
                     <input
@@ -62,7 +100,7 @@ function Signup() {
                         required
                         value={formData.password}
                         onChange={handleChange}
-                        className="w-full p-4 bg-white border-none rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-4 bg-white border-none rounded-xl shadow-orange-100 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Create Password"
                     />
                     <input
@@ -72,12 +110,12 @@ function Signup() {
                         required
                         value={formData.confirmPassword}
                         onChange={handleChange}
-                        className="w-full p-4 bg-white border-none rounded-xl shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full p-4 bg-white border-none rounded-xl shadow-orange-100 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         placeholder="Confirm Password"
                     />
                     <button
                         type="submit"
-                        className="w-full bg-gradient-to-br from-red-500 via-orange-400 to-yellow-500 text-white py-3 rounded-xl shadow-lg font-bold hover:scale-105 transition"
+                        className="w-full bg-gradient-to-br from-red-500 via-orange-400 to-yellow-500 text-white py-3 rounded-xl shadow-orange-100 shadow-lg font-bold hover:scale-105 transition"
                     >
                         Create Your Account
                     </button>
@@ -95,10 +133,10 @@ function Signup() {
                     Or Sign up with
                 </div>
                 <div className="flex justify-center gap-4 mt-4">
-                    <button className="p-3 bg-black text-white rounded-full shadow-md border-4 border-white hover:scale-110 transition">
+                    <button className="p-3 bg-black text-white rounded-full shadow-orange-100 shadow-md border-4 border-white hover:scale-110 transition">
                         <FaApple className="text-xl" />
                     </button>
-                    <button className="p-3 bg-gray-100 text-gray-600 rounded-full shadow-md border-4 border-white hover:scale-110 transition">
+                    <button className="p-3 bg-gray-100 text-gray-600 rounded-full shadow-orange-100 shadow-md border-4 border-white hover:scale-110 transition">
                         <FcGoogle className="text-xl" />
                     </button>
                 </div>

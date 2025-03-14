@@ -1,5 +1,7 @@
 import pastDrives from "../../constant/drives/past";
 import upcomingDrives from "../../constant/drives/upcoming";
+import Button from "../../styles/Button";
+import Button2 from "../../styles/Button2";
 import {Link} from "react-router-dom";
 
 function Drives() {
@@ -30,7 +32,7 @@ function Drives() {
                                 <h4 className="text-xl font-semibold text-red-600 mb-2">
                                     {drive.title}
                                 </h4>
-                                {/* <div className="text-gray-600 mb-4">
+                                <div className="text-gray-600 mb-4">
                                     <p className="mb-1">
                                         <span className="font-medium">
                                             Date:
@@ -43,17 +45,21 @@ function Drives() {
                                         </span>{" "}
                                         {drive.location}
                                     </p>
-                                </div> 
-                                <p className="text-gray-600">
+                                </div>
+                                <p className="text-gray-600 mb-3">
                                     {drive.description}
                                 </p>
-                                <Link
-                                    className="mt-4 inline-block bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-                                    to="/food-donation"
-                                >
-                                    Register to Volunteer
-                                </Link>
-                                */}
+                                {typeof drive.link === "string" ? (
+                                    <Button>
+                                        <Link to={drive.link}>
+                                            Register to Volunteer
+                                        </Link>
+                                    </Button>
+                                ) : (
+                                    <Button onClick={drive.link}>
+                                        Register to Volunteer
+                                    </Button>
+                                )}
                             </div>
                         ))}
                     </div>
@@ -72,31 +78,11 @@ function Drives() {
                                     <h4 className="text-xl font-semibold text-red-600 mb-2">
                                         {drive.title}
                                     </h4>
-                                    <button
-                                        className="relative inline-block px-2 py-1 text-white text-md font-medium rounded-lg transition-all duration-300"
-                                        style={{
-                                            background:
-                                                "linear-gradient(140.14deg, #ec540e 15.05%, #d6361f 114.99%) padding-box, linear-gradient(142.51deg, #ff9465 8.65%, #af1905 88.82%) border-box",
-                                            borderRadius: "7px",
-                                            border: "2px solid transparent",
-                                            textShadow: "1px 1px 1px #00000040",
-                                            boxShadow:
-                                                "8px 8px 20px 0px #45090059",
-                                        }}
-                                        onMouseEnter={(e) =>
-                                            (e.currentTarget.style.boxShadow =
-                                                "none")
-                                        }
-                                        onMouseLeave={(e) =>
-                                            (e.currentTarget.style.boxShadow =
-                                                "8px 8px 20px 0px #45090059")
-                                        }
-                                        onClick={() =>
-                                            window.open(drive.link, "_blank")
-                                        }
-                                    >
-                                        Glimpse
-                                    </button>
+                                    <Button2>
+                                        <Link to={drive.link}>
+                                            <span>Glimpse</span>
+                                        </Link>
+                                    </Button2>
                                 </div>
                                 <div className="text-gray-600 mb-4">
                                     <p className="mb-1">

@@ -61,12 +61,6 @@ function Contact() {
                             method="POST"
                         >
                             <div>
-                                <label
-                                    htmlFor="name"
-                                    className="block text-sm font-medium text-gray-700"
-                                >
-                                    Name
-                                </label>
                                 <input
                                     id="name"
                                     name="name"
@@ -74,16 +68,11 @@ function Contact() {
                                     required
                                     value={formData.name}
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm"
+                                    className="w-full p-4 bg-white border-orange-100 rounded-xl shadow-orange-100 shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                    placeholder="Full Name"
                                 />
                             </div>
                             <div>
-                                <label
-                                    htmlFor="email"
-                                    className="block text-sm font-medium text-gray-700"
-                                >
-                                    Email
-                                </label>
                                 <input
                                     id="email"
                                     name="email"
@@ -91,7 +80,8 @@ function Contact() {
                                     required
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm"
+                                    className="w-full p-4 bg-white border-orange-100 rounded-xl shadow-orange-100 shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                    placeholder="Email Address"
                                 />
                                 {errors.email && (
                                     <p className="text-red-500 text-xs mt-1">
@@ -100,19 +90,14 @@ function Contact() {
                                 )}
                             </div>
                             <div>
-                                <label
-                                    htmlFor="phone"
-                                    className="block text-sm font-medium text-gray-700"
-                                >
-                                    Phone
-                                </label>
                                 <PhoneInput
                                     id="phone"
                                     name="phone"
                                     value={formData.phone}
                                     onChange={handlePhoneChange}
                                     defaultCountry="IN"
-                                    className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm"
+                                    className="w-full p-4 bg-white border-orange-100 rounded-xl shadow-orange-100 shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                    placeholder="Phone Number"
                                 />
                                 {errors.phone && (
                                     <p className="text-red-500 text-xs mt-1">
@@ -121,12 +106,6 @@ function Contact() {
                                 )}
                             </div>
                             <div>
-                                <label
-                                    htmlFor="message"
-                                    className="block text-sm font-medium text-gray-700"
-                                >
-                                    Message
-                                </label>
                                 <textarea
                                     id="message"
                                     name="message"
@@ -134,7 +113,8 @@ function Contact() {
                                     required
                                     value={formData.message}
                                     onChange={handleChange}
-                                    className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm"
+                                    className="w-full p-4 bg-white border-orange-100 rounded-xl shadow-orange-100 shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                    placeholder="Write your message"
                                 ></textarea>
                             </div>
                             <button

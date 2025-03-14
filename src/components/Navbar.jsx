@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
-//import {UserCircleIcon} from "@heroicons/react/24/outline";
+import {UserCircleIcon} from "@heroicons/react/24/outline";
 import logo from "../assets/logo.jpeg";
 import name from "../assets/name.png";
 
@@ -66,25 +66,25 @@ function Navbar() {
                         >
                             Donate
                         </Link>
-                        {/* <Link
+                        <Link
                             to="/login"
                             className="text-gray-700 hover:text-red-500"
                             title="Login"
                             onClick={handleLinkClick}
                         >
                             <UserCircleIcon className="ml-4 h-8 w-8" />
-                        </Link> */}
+                        </Link>
                     </div>
 
                     <div className="md:hidden flex items-center space-x-4">
-                        {/* <Link
+                        <Link
                             to="/login"
                             className="text-gray-700 hover:text-red-500"
                             title="Login"
                             onClick={handleLinkClick}
                         >
                             <UserCircleIcon className="h-8 w-8" />
-                        </Link> */}
+                        </Link>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-500 hover:bg-gray-100 focus:outline-none"
