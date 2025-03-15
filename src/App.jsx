@@ -10,7 +10,7 @@ const Contact = React.lazy(() => import("./pages/Contact"));
 const Login = React.lazy(() => import("./pages/Login"));
 const Signup = React.lazy(() => import("./pages/Signup"));
 const Donate = React.lazy(() => import("./pages/Donate"));
-const FoodDonation = React.lazy(() => import("./pages/drives/FoodDonation"));
+const PadsDonation = React.lazy(() => import("./pages/drives/PadsDonation"));
 const BloodDonation = React.lazy(() => import("./pages/drives/BloodDonation"));
 
 function App() {
@@ -73,10 +73,10 @@ function App() {
                             }
                         />
                         <Route
-                            path="/food-donation"
+                            path="/pads-donation"
                             element={
                                 <Suspense fallback={<p>Loading...</p>}>
-                                    <FoodDonation />
+                                    <PadsDonation />
                                 </Suspense>
                             }
                         />

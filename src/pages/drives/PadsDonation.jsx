@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import Button from "../../styles/Button";
 
-const BloodDonation = () => {
+const PadDonation = () => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -11,16 +11,19 @@ const BloodDonation = () => {
         bloodgroup: "",
     });
 
-    const [loading, setLoading] = useState(false); // For button loading state
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Blood Donation Drive Registration:", formData);
+        console.log(
+            "Breaking the Stigma: Menstrual Hygiene Drive Registration:",
+            formData
+        );
         setLoading(true);
 
         try {
             const response = await fetch(
-                "https://astitva-backend.vercel.app/blood",
+                "https://astitva-backend.vercel.app/pad",
                 {
                     method: "POST",
                     mode: "cors",
@@ -36,12 +39,10 @@ const BloodDonation = () => {
                     name: "",
                     email: "",
                     phone: "",
-                    age: "",
-                    bloodgroup: "",
                 }); // Clear form
                 if (
                     window.confirm(
-                        "You've successfully registered for blood donation. Do you want to contribute something?"
+                        "You've successfully registered yourself as a voulenteer in Menstrual Hygiene Drive. Do you want to contribute something?"
                     )
                 ) {
                     window.location.href = "/donate";
@@ -65,7 +66,7 @@ const BloodDonation = () => {
         <div className="flex justify-center items-center h-screen bg-gray-100 px-4 md:mt-8">
             <div className="w-full max-w-lg bg-white p-8 rounded-2xl shadow-lg border-4 border-white">
                 <h2 className="text-center text-2xl font-extrabold mb-8 text-orange-500">
-                    Register for the Blood Donation Drive
+                    Breaking the Stigma: Menstrual Hygiene Drive
                 </h2>
 
                 <form
@@ -105,28 +106,6 @@ const BloodDonation = () => {
                         placeholder="Phone Number"
                     />
 
-                    <input
-                        id="age"
-                        name="age"
-                        type="number"
-                        required
-                        value={formData.age}
-                        onChange={handleChange}
-                        className="w-full p-4 bg-white border-none rounded-xl shadow-orange-100 shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400"
-                        placeholder="Age"
-                    />
-
-                    <input
-                        id="bloodgroup"
-                        name="bloodgroup"
-                        type="text"
-                        required
-                        value={formData.bloodgroup}
-                        onChange={handleChange}
-                        className="w-full p-4 bg-white border-none rounded-xl shadow-orange-100 shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400"
-                        placeholder="Blood Group"
-                    />
-
                     {/* Submit & Donate Buttons */}
                     <div className="grid grid-cols-2 gap-4 mt-2">
                         <Button type="submit" disabled={loading}>
@@ -142,4 +121,4 @@ const BloodDonation = () => {
     );
 };
 
-export default BloodDonation;
+export default PadDonation;

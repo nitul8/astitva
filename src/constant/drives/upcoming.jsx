@@ -19,7 +19,7 @@ const upcomingDrives = [
                 the event details!
             </div>
         ),
-        link: () => alert("Stay tuned . . ."),
+        link: "/pads-donation",
     },
     {
         id: 2,
