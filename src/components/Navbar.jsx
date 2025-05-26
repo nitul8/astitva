@@ -72,7 +72,7 @@ function Navbar() {
                             onClick={handleLinkClick}
                         >
                             Blood Hero
-                        </Link> */}
+                        </Link> 
                         <Link
                             to="/login"
                             className="text-gray-700 hover:text-red-500"
@@ -80,7 +80,7 @@ function Navbar() {
                             onClick={handleLinkClick}
                         >
                             <UserCircleIcon className="ml-4 h-8 w-8" />
-                        </Link>
+                        </Link>*/}
                     </div>
 
                     <div className="md:hidden flex items-center space-x-4">
