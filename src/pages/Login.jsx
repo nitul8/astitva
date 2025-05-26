@@ -10,16 +10,18 @@ function Login() {
     });
 
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
+        setSuccess("");
 
         console.log("Sending data:", formData); // Debugging
 
         try {
-            const response = await fetch("http://localhost:3000/api/login", {
+            const response = await fetch("http://localhost:3000/user/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -37,7 +39,10 @@ function Login() {
             localStorage.setItem("token", data.token);
             localStorage.setItem("user", JSON.stringify(data.user));
 
-            navigate("/dashboard");
+            setSuccess("Login Successful! Redirecting...");
+            setTimeout(() => {
+                navigate("/dashboard");
+            }, 2000); // Redirect after 2 seconds
         } catch (error) {
             console.error("Error:", error); // Debugging
             setError(error.message);
@@ -55,6 +60,19 @@ function Login() {
         <div className="flex justify-center items-center h-screen bg-gray-100 px-4 mt-8">
             <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg border-4 border-white">
                 <p className="text-center text-2xl font-extrabold">Sign In</p>
+
+                {/* Alert Messages */}
+                {error && (
+                    <div className="bg-red-100 text-red-700 p-3 rounded-md text-center mt-4">
+                        ❌ {error}
+                    </div>
+                )}
+                {success && (
+                    <div className="bg-green-100 text-green-700 p-3 rounded-md text-center mt-4">
+                        ✅ {success}
+                    </div>
+                )}
+
                 <form
                     className="flex flex-col mt-6 gap-4"
                     onSubmit={handleSubmit}
@@ -91,6 +109,7 @@ function Login() {
                         Sign In
                     </button>
                 </form>
+
                 <p className="text-center text-sm text-gray-500 mt-6">
                     Don't have an account?{" "}
                     <Link
