@@ -5,7 +5,6 @@ import shraban from "../assets/lead/shraban.png";
 import dhriti from "../assets/lead/dhriti.jpeg";
 
 import representative from "../constant/members/representative";
-import nonjec from "../constant/members/nonjec";
 
 import Whisper from "../styles/Whisper";
 
@@ -161,23 +160,6 @@ function About() {
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-8">
                         {representative.map((member, index) => (
-                            <TeamMember
-                                key={index}
-                                imgSrc={member.imgSrc}
-                                name={member.name}
-                                role={member.role}
-                            />
-                        ))}
-                    </div>
-                </div>
-
-                {/* Non-JEC Members */}
-                <div className="mt-16 text-center">
-                    <h3 className="text-2xl font-semibold mb-8">
-                        Our Non-JEC Members
-                    </h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-1 md:gap-8 mt-8">
-                        {nonjec.map((member, index) => (
                             <TeamMember
                                 key={index}
                                 imgSrc={member.imgSrc}
