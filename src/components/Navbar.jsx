@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
-import {UserCircleIcon} from "@heroicons/react/24/outline";
+//import {UserCircleIcon} from "@heroicons/react/24/outline";
 import logo from "../assets/logo.jpeg";
 import name from "../assets/name.png";
 
@@ -106,14 +106,14 @@ function Navbar() {
                     </div>
 
                     <div className="md:hidden flex items-center space-x-4">
-                        <Link
+                        {/* <Link
                             to="/login"
                             className="text-gray-700 hover:text-red-500"
                             title="Login"
                             onClick={handleLinkClick}
                         >
                             <UserCircleIcon className="h-8 w-8" />
-                        </Link>
+                        </Link> */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-500 hover:bg-gray-100 focus:outline-none"
@@ -170,6 +170,26 @@ function Navbar() {
                         >
                             Our Drives
                         </Link>
+                        <div
+                            className="relative"
+                            onMouseEnter={() => setIsHover(true)}
+                            onMouseLeave={() => setIsHover(false)}
+                        >
+                            <Link className="text-gray-700 hover:text-red-500 px-3 py-2 cursor-pointer">
+                                Teams
+                            </Link>
+                            {isHover && (
+                                <div className="absolute top-full left-0 mt-1 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-20">
+                                    <Link
+                                        to="/astitva-jec"
+                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100"
+                                        onClick={handleLinkClick}
+                                    >
+                                        Astitva JEC
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
                         <Link
                             to="/contact"
                             className="block text-gray-700 hover:text-red-500 px-3 py-2"

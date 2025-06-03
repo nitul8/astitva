@@ -25,7 +25,7 @@ function About() {
 
                 {/* Mission & Impact */}
 
-                <div className="w-3/4 text-center justify-center mx-auto">
+                <div className="w-full md:w-3/4 text-center justify-center mx-auto">
                     <h3 className="text-2xl font-semibold mb-4 text-center">
                         About Us
                     </h3>
@@ -35,18 +35,12 @@ function About() {
                         compassion. It was here that a group of empathetic
                         individuals came together with a shared dream—to make a
                         meaningful difference in the lives of the
-                        underprivileged. Astitva, a non-profit organization
-                        founded in January 2025, believes that every life has
-                        value, and that every being deserves dignity, care, and
-                        compassion.
+                        underprivileged.
                     </p>
                     <p className="text-gray-600">
-                        True to our name, which means &rdquo;existence&ldquo; or
-                        &rdquo;being&ldquo;, we are engaged in various social
-                        work initiatives, ensuring that every individual, human
-                        or animal, receives the care and dignity they deserve.
-                        Our work ranges from cloth donation drives to
-                        vaccination drives for stray animals and many more.
+                        Astitva, a non-profit organization founded in January
+                        2025, believes that every life has value, and that every
+                        being deserves dignity, care, and compassion.
                     </p>
                 </div>
 
@@ -55,11 +49,11 @@ function About() {
                     <h3 className="text-2xl font-semibold mb-4">Our Team</h3>
 
                     {/* Leads */}
-                    <div className="flex justify-center items-center space-x-4 w-full">
+                    <div className="flex flex-col md:flex-row justify-center items-center space-x-4 w-full">
                         <div className="p-6 text-left flex justify-center items-center space-x-4 w-full max-w-md">
                             <img
                                 src={shraban}
-                                className="w-20 h-20 rounded-full object-cover"
+                                className="w-24 h-24 rounded-full object-cover"
                             />
                             <div>
                                 <h4 className="text-lg font-semibold text-gray-900">
@@ -77,7 +71,7 @@ function About() {
                         <div className="p-6 text-left flex justify-center items-center space-x-4 w-full max-w-md">
                             <img
                                 src={diptangshu}
-                                className="w-20 h-20 rounded-full object-cover"
+                                className="w-24 h-24 rounded-full object-cover"
                             />
                             <div>
                                 <h4 className="text-lg font-semibold text-gray-900">
@@ -113,11 +107,11 @@ function About() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-center items-center space-x-4 w-full">
+                    <div className="flex flex-col md:flex-row justify-center items-center space-x-4 w-full">
                         <div className="p-6 text-left flex justify-center items-center space-x-4 w-full max-w-md">
                             <img
                                 src={samudra}
-                                className="w-20 h-20 rounded-full object-cover"
+                                className="w-24 h-24 rounded-full object-cover"
                             />
                             <div>
                                 <h4 className="text-lg font-semibold text-gray-900">
@@ -135,7 +129,7 @@ function About() {
                         <div className="p-6 text-left flex justify-center items-center space-x-4 w-full max-w-md">
                             <img
                                 src={doly}
-                                className="w-20 h-20 rounded-full object-cover"
+                                className="w-24 h-24 rounded-full object-cover"
                             />
                             <div>
                                 <h4 className="text-lg font-semibold text-gray-900">
@@ -187,13 +181,13 @@ function About() {
 // eslint-disable-next-line react/prop-types
 function TeamMember({imgSrc, name, role}) {
     return (
-        <div className="p-6 text-left flex justify-center items-center space-x-4 w-full max-w-md">
+        <div className="p-6 text-left flex flex-col md:flex-row justify-center items-center space-x-4 w-full max-w-md">
             <img
                 src={imgSrc}
                 className="w-24 h-24 rounded-full object-cover"
                 alt={name}
             />
-            <div>
+            <div className="text-center">
                 <h4 className="text-lg font-semibold text-gray-900">{name}</h4>
                 <p className="text-orange-400 text-xs">{role}</p>
             </div>
