@@ -49,7 +49,10 @@ function Internship() {
                             <h4 className="font-bold mb-1 text-orange-500">
                                 Perks
                             </h4>
-                            <p>Internship Certificate</p>
+                            <p>
+                                Internship Certificate, Guidance and Help in
+                                Report Preparation
+                            </p>
                         </div>
                     </div>
 
