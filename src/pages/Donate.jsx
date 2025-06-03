@@ -70,7 +70,7 @@ function Donate() {
                         <h2 className="text-2xl md:text-3xl text-gray-900">
                             Fill your{" "}
                             <Dancing className="text-4xl">heart</Dancing> and
-                            someone's life
+                            someone&apos;s life
                         </h2>
                         <h2 className="text-2xl md:text-3xl text-gray-900">
                             with the <Whisper>Joy</Whisper> of giving

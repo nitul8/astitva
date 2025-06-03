@@ -13,6 +13,8 @@ import nilanjana from "../../assets/representative/nilanjana.jpeg";
 import mrigankhi from "../../assets/representative/mrigankhi.jpg";
 import bibek from "../../assets/representative/bibek.jpeg";
 import mridul from "../../assets/representative/mridul.jpeg";
+import sumi from "../../assets/representative/sumi.jpeg";
+import anirban from "../../assets/representative/anirban.jpeg";
 
 const jec = [
     {
@@ -103,6 +105,18 @@ const jec = [
         id: 15,
         imgSrc: mridul,
         name: "Mridul Hazarika",
+        role: "Representative",
+    },
+    {
+        id: 16,
+        imgSrc: sumi,
+        name: "Sumi Sikha Bora",
+        role: "Representative",
+    },
+    {
+        id: 17,
+        imgSrc: anirban,
+        name: "Anirban Das",
         role: "Representative",
     },
 ];

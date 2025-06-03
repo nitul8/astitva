@@ -30,7 +30,6 @@ function Navbar() {
                             />
                         </Link>
                     </div>
-
                     <div className="hidden md:flex items-center space-x-4">
                         <Link
                             to="/"
@@ -73,7 +72,13 @@ function Navbar() {
                                 </div>
                             )}
                         </div>
-
+                        <Link
+                            to="/internship"
+                            className="text-gray-700 hover:text-red-500 px-3 py-2"
+                            onClick={handleLinkClick}
+                        >
+                            Internship
+                        </Link>
                         <Link
                             to="/contact"
                             className="text-gray-700 hover:text-red-500 px-3 py-2"
