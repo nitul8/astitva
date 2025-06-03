@@ -40,13 +40,13 @@ function About() {
                             compassion.
                         </p>
                         <p className="text-gray-600">
-                            True to our name, which means "existence" or
-                            "being“, we are engaged in various social work
-                            initiatives, ensuring that every individual, human
-                            or animal, receives the care and dignity they
-                            deserve. Our work ranges from cloth donation drives
-                            to vaccination drives for stray animals and many
-                            more.
+                            True to our name, which means
+                            &rdquo;existence&ldquo; or &rdquo;being&ldquo;, we
+                            are engaged in various social work initiatives,
+                            ensuring that every individual, human or animal,
+                            receives the care and dignity they deserve. Our work
+                            ranges from cloth donation drives to vaccination
+                            drives for stray animals and many more.
                         </p>
                     </div>
 
@@ -208,6 +208,7 @@ function About() {
 }
 
 // Reusable TeamMember Component
+// eslint-disable-next-line react/prop-types
 function TeamMember({imgSrc, name, role}) {
     return (
         <div className="bg-white rounded-lg shadow-md p-6 text-center">

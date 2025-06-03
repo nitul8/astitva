@@ -7,17 +7,12 @@ import suvan from "../../assets/jec/suvan.png";
 import subasana from "../../assets/jec/subasana.jpeg";
 import munmi from "../../assets/jec/munmi.png";
 import kasturi from "../../assets/jec/kasturi.png";
-import doly from "../../assets/jec/doly.png";
 import simanta from "../../assets/jec/simanta.jpeg";
-import rituraj from "../../assets/jec/rituraj.png";
 import sabina from "../../assets/jec/sabina.png";
 import baraxa from "../../assets/jec/baraxa.png";
 import zil from "../../assets/jec/zil.jpeg";
 import jenny from "../../assets/jec/jenny.png";
 import ananya from "../../assets/jec/ananya.jpeg";
-import shraban from "../../assets/jec/shraban.png";
-import samudra from "../../assets/jec/samudra.png";
-import barnom from "../../assets/jec/barnom.png";
 import rimjhim from "../../assets/jec/rimjhim.jpeg";
 import kunwali from "../../assets/jec/kunwali.jpeg";
 import oyo from "../../assets/jec/oyo.png";
@@ -138,60 +133,30 @@ const jec = [
     },
     {
         id: 19,
-        imgSrc: doly,
-        name: "Doly Barman",
-        role: "Member",
-    },
-    {
-        id: 20,
-        imgSrc: rituraj,
-        name: "Rituraj Borah",
-        role: "Member",
-    },
-    {
-        id: 21,
         imgSrc: simanta,
         name: "Simanta Samiran Deka",
         role: "Member",
     },
     {
-        id: 22,
+        id: 20,
         imgSrc: rimjhim,
         name: "Rimjhim Phukan",
         role: "Member",
     },
     {
-        id: 23,
+        id: 21,
         imgSrc: ananya,
         name: "Ananya Bakalial",
         role: "Member",
     },
     {
-        id: 24,
-        imgSrc: shraban,
-        name: "Shraban Nath",
-        role: "Member",
-    },
-    {
-        id: 25,
-        imgSrc: samudra,
-        name: "Samudra Baruah",
-        role: "Member",
-    },
-    {
-        id: 26,
-        imgSrc: barnom,
-        name: "Barnom Gohain",
-        role: "Member",
-    },
-    {
-        id: 27,
+        id: 22,
         imgSrc: bhargab,
         name: "Bhargab Kalita",
         role: "Member",
     },
     {
-        id: 28,
+        id: 23,
         imgSrc: ishan,
         name: "Ishan Nilim Gogoi",
         role: "Member",

@@ -14,9 +14,11 @@ const Signup = React.lazy(() => import("./pages/Signup"));
 const Donate = React.lazy(() => import("./pages/Donate"));
 const BloodHero = React.lazy(() => import("./pages/bloodhero/BloodHero"));
 const SearchNearby = React.lazy(() => import("./pages/bloodhero/SearchNearby"));
-const PadsDonation = React.lazy(() => import("./pages/drives/PadsDonation"));
-const BloodDonation = React.lazy(() => import("./pages/drives/BloodDonation"));
+const Internship = React.lazy(() => import("./pages/Internship"));
 
+const JEC = React.lazy(() => import("./pages/AstitvaJEC"));
+
+// eslint-disable-next-line react/prop-types
 const PrivateRoute = ({children}) => {
     const token = localStorage.getItem("token");
     return token ? children : <Navigate to="/login" />;
@@ -98,18 +100,18 @@ function App() {
                             }
                         />
                         <Route
-                            path="/pads-donation"
+                            path="/astitva-jec"
                             element={
                                 <Suspense fallback={<p>Loading...</p>}>
-                                    <PadsDonation />
+                                    <JEC />
                                 </Suspense>
                             }
                         />
                         <Route
-                            path="/blood-donation"
+                            path="/internship"
                             element={
                                 <Suspense fallback={<p>Loading...</p>}>
-                                    <BloodDonation />
+                                    <Internship />
                                 </Suspense>
                             }
                         />

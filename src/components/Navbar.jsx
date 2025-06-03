@@ -6,6 +6,7 @@ import name from "../assets/name.png";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isHover, setIsHover] = useState(false);
 
     // Function to handle link clicks
     const handleLinkClick = () => {
@@ -52,6 +53,27 @@ function Navbar() {
                         >
                             Our Drives
                         </Link>
+                        <div
+                            className="relative"
+                            onMouseEnter={() => setIsHover(true)}
+                            onMouseLeave={() => setIsHover(false)}
+                        >
+                            <Link className="text-gray-700 hover:text-red-500 px-3 py-2 cursor-pointer">
+                                Teams
+                            </Link>
+                            {isHover && (
+                                <div className="absolute top-full left-0 mt-1 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-20">
+                                    <Link
+                                        to="/astitva-jec"
+                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-100"
+                                        onClick={handleLinkClick}
+                                    >
+                                        Astitva JEC
+                                    </Link>
+                                </div>
+                            )}
+                        </div>
+
                         <Link
                             to="/contact"
                             className="text-gray-700 hover:text-red-500 px-3 py-2"
